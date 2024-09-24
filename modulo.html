@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Dashboard Admin </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="modulo.css">
+</head>
+<body>
+    <div class="Homee">
+        <div class="Navbar">
+            <img src="logo.png" alt="logo" class="logoo">
+            <button class="Logout text-black rounded py-1 w-10 d-inline-block px-4">Cerrar Sesión</button>
+        </div>
+        
+        <div class="lateral">
+            <div class="Barralateral">
+                <ul>
+                    <li>
+                        <a href="#inicio" class="text-black rounded py-2 w-100 d-inline-block px-4">
+                            <span class="icon">🏠</span> Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ingresoincidencias" class="text-black rounded py-2 w-100 d-inline-block px-4">
+                            <span class="icon">📤</span> Ingresar Incidencias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#estadoincidencias" class="text-black rounded py-2 w-100 d-inline-block px-4">
+                            <span class="icon">🔄</span> Estado Incidencias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gestiondeusuarios" class="text-black rounded py-2 w-100 d-inline-block px-4 active">
+                            <span class="icon">👤</span> Gestión de Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#manualusuario" class="text-black rounded py-2 w-100 d-inline-block px-4">
+                            <span class="icon">📄</span> Manual de Usuario
+                        </a>
+                    </li>
+                    <!-- Nueva pestaña de creación de usuarios -->
+                    <li>
+                        <a href="#crearusuarios" class="text-black rounded py-2 w-100 d-inline-block px-4">
+                            <span class="icon">👥</span> Crear Usuarios
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="gestion-usuarios">
+              <h1>Realiza la carga de usuarios Masiva</h1>
+              <form action="" method="" enctype="">
+                <div class="upload">
+                    <label for="fileInput">Cargar archivo:</label>
+                    <input type="file" id="fileInput" name="archivo">
+                </div>
+                <button class="btn-asignar">Cargar Archivo</button>
+              </form>
+
+              <h1>Gestión de Roles de Usuarios</h1>
+        
+              <div class="filtro-rol">
+                <label for="RolFiltrado">Filtrar por rol:</label>
+                <select id="RolFiltrado">
+                  <option value="">Todos</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Editor">Editor</option>
+                  <option value="Usuario">Usuario</option>
+                </select>
+              </div>
+            
+              <div class="tabla-usuarios-container">
+                <table class="tabla-usuarios">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Email</th>
+                      <th>Rol</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Juan Pérez</td>
+                      <td>juan.perez@example.com</td>
+                      <td>Admin</td>
+                      <td>
+                        <button class="btn-asignar">Asignar Rol</button>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>María García</td>
+                      <td>maria.garcia@example.com</td>
+                      <td>Usuario</td>
+                      <td>
+                        <button class="btn-asignar">Asignar Rol</button>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Carlos López</td>
+                      <td>carlos.lopez@example.com</td>
+                      <td>Editor</td>
+                      <td>
+                        <button class="btn-asignar">Asignar Rol</button>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h3>Asignar un rol a Juan Perez</h3>
+                <select value={NuevoRol} onChange={}>
+                  <option value="">Seleccionar rol</option>
+                  <option>Admin</option>
+                  <option>Moderator</option>
+                  <option>User</option>
+                </select>
+                <button onClick={}>Asignar Rol</button>
+                <button onClick={}>Cancelar</button>
+              </div>
+
+              <div>
+                <h3>Editar Usuario</h3>
+                <input type="text" value="Juan Perez" onChange={} placeholder="Nombre del usuario" />
+                <input type="email" value="juan.perez@example.com" onChange={} placeholder="Email del usuario" />
+                <input type="password" value={NuevaContrasena} onChange={} placeholder="Nueva contraseña (opcional)" />
+                <button onClick={}>Guardar Cambios</button>
+                <button onClick={}>Cancelar</button>
+              </div>
+
+              <div class="crear-rol">
+                <h3>Crear un nuevo rol</h3>
+                <input type="text" placeholder="Nombre del nuevo rol">
+                <button class="btn-crear-rol">Crear Rol</button>
+              </div>
+
+              <div class="crear-rol">
+                <h3>Crear un nuevo usuario</h3>
+                <button class="btn-crear-usuario" onclick="window.location.href='crear_usuario.html'">Ir a crear usuario</button>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
